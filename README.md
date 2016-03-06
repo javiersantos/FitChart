@@ -5,9 +5,10 @@
   <a target="_blank" href="https://android-arsenal.com/api?level=14"><img src="https://img.shields.io/badge/API-14%2B-orange.svg"></a>
 </p>
 
-<p align="center">Fit Chart is an Android view similar to Google Fit wheel chart. This library is a fork from the original <a href="https://github.com/txusballesteros/fit-chart">FitChart library</a> by Txus Ballesteros and includes an option to enable/disable the animation progress.</p>
+<p align="center">Fit Chart is an Android view similar to Google Fit wheel chart. This library is a fork from the original <a href="https://github.com/txusballesteros/fit-chart">FitChart library</a> by Txus Ballesteros and includes an option to enable/disable the animation progress.
+</p>
 
-![Fit Chart](assets/overdraw_animation_mode.gif) ![Fit Chart](assets/linear_animation_mode.gif)
+<p align="center"><img src="assets/overdraw_animation_mode.gif" /><img src="assets/linear_animation_mode.gif" /></p>
 
 ## How to include
 
