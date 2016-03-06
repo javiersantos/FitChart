@@ -3,20 +3,23 @@ Fit Chart
 
 ![](assets/overdraw_animation_mode.gif) ![](assets/linear_animation_mode.gif)
 
-## Latest Version
-
-[![Download](https://api.bintray.com/packages/txusballesteros/maven/FitChart/images/download.svg)](https://bintray.com/txusballesteros/maven/FitChart/_latestVersion) ![](https://img.shields.io/badge/platform-android-green.svg)
-
 ## How to use
 
 ### Configuring your project dependencies
 
-Add the library dependency to your build.gradle file.
+Add the repository to your project **build.gradle**:
+```Javascript
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+```
 
-```groovy
+And add the library to your module **build.gradle**:
+```Javascript
 dependencies {
-    ...
-    compile 'com.txusballesteros:FitChart:1.0'
+    compile 'com.github.javiersantos:fit-chart:1.1'
 }
 ```
 
@@ -53,14 +56,22 @@ final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
                fitChart.setMaxValue(100f);
 ```
 
-Setting a single progress value.
+Setting a single progress value with animation.
 
 ```java
 final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
                fitChart.setValue(80f);
 ```
 
-Setting a some progress values.
+Or disabling the animation.
+
+```java
+final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
+               fitChart.setValue(80f, false);
+```
+
+
+Setting a some progress values with animation.
 
 ```java
 Collection<FitChartValue> values = new ArrayList<>();
@@ -70,6 +81,18 @@ values.add(new FitChartValue(15f, 0x8fc026));
 values.add(new FitChartValue(10f, 0xB5CC84));
 final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
                fitChart.setValues(values);
+```
+
+Or disabling the animation.
+
+```java
+Collection<FitChartValue> values = new ArrayList<>();
+values.add(new FitChartValue(30f, 0x2d4302));
+values.add(new FitChartValue(20f, 0x75a80d));
+values.add(new FitChartValue(15f, 0x8fc026));
+values.add(new FitChartValue(10f, 0xB5CC84));
+final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
+               fitChart.setValues(values, false);
 ```
 
 ## License
