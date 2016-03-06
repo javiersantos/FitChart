@@ -56,22 +56,22 @@ Setting the minimum and maximum values of the scale of the chart.
 
 ```java
 final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
-               fitChart.setMinValue(0f);
-               fitChart.setMaxValue(100f);
+    fitChart.setMinValue(0f);
+    fitChart.setMaxValue(100f);
 ```
 
 Setting a single progress value with animation.
 
 ```java
 final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
-               fitChart.setValue(80f);
+    fitChart.setValue(80f);
 ```
 
 Or without the progress animation.
 
 ```java
 final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
-               fitChart.setValue(80f, false);
+    fitChart.setValue(80f, false);
 ```
 
 
@@ -84,7 +84,7 @@ values.add(new FitChartValue(20f, 0x75a80d));
 values.add(new FitChartValue(15f, 0x8fc026));
 values.add(new FitChartValue(10f, 0xB5CC84));
 final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
-               fitChart.setValues(values);
+    fitChart.setValues(values);
 ```
 
 Or without the progress animation.
@@ -96,7 +96,7 @@ values.add(new FitChartValue(20f, 0x75a80d));
 values.add(new FitChartValue(15f, 0x8fc026));
 values.add(new FitChartValue(10f, 0xB5CC84));
 final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
-               fitChart.setValues(values, false);
+    fitChart.setValues(values, false);
 ```
 
 ## License
