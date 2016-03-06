@@ -1,11 +1,15 @@
-Fit Chart
-=====================
+<h1 align="center">Fit Chart</h1>
+<h4 align="center">Android Library</h4>
 
-![](assets/overdraw_animation_mode.gif) ![](assets/linear_animation_mode.gif)
+<p align="center">
+  <a target="_blank" href="https://android-arsenal.com/api?level=14"><img src="https://img.shields.io/badge/API-14%2B-orange.svg"></a>
+</p>
 
-## How to use
+<p align="center">Fit Chart is an Android view similar to Google Fit wheel chart. This library is a fork from the original <a href="https://github.com/txusballesteros/fit-chart">FitChart library</a> by Txus Ballesteros and includes an option to enable/disable the animation progress.</p>
 
-### Configuring your project dependencies
+![Fit Chart](assets/overdraw_animation_mode.gif) ![Fit Chart](assets/linear_animation_mode.gif)
+
+## How to include
 
 Add the repository to your project **build.gradle**:
 ```Javascript
@@ -19,31 +23,30 @@ repositories {
 And add the library to your module **build.gradle**:
 ```Javascript
 dependencies {
-    compile 'com.github.javiersantos:fit-chart:1.1'
+    compile 'com.github.javiersantos:FitChart:1.1'
 }
 ```
 
-### Adding the view to your layout
-
-Add the view to your xml layout file.
+## Usage
+### Adding the View to your layout
 
 ```xml
 <com.txusballesteros.widgets.FitChart
-            android:layout_width="200dp"
-            android:layout_height="200dp" />
+  android:layout_width="200dp"
+  android:layout_height="200dp" />
 ```
 
-### Styling the view
+### Styling the View
 
 If you want to customize the view, you can set the next attributes.
 
 ```xml
 <com.txusballesteros.widgets.FitChart
-            ..
-            app:strokeSize="10dp"
-            app:valueStrokeColor="#ff0000"
-            app:backStrokeColor="#00ff00"
-            app:animationMode="overdraw" />
+  ...
+  app:strokeSize="10dp"
+  app:valueStrokeColor="#ff0000"
+  app:backStrokeColor="#00ff00"
+  app:animationMode="overdraw" />
 ```
 
 ### Setting the values
@@ -63,7 +66,7 @@ final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
                fitChart.setValue(80f);
 ```
 
-Or disabling the animation.
+Or without the progress animation.
 
 ```java
 final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
@@ -83,7 +86,7 @@ final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
                fitChart.setValues(values);
 ```
 
-Or disabling the animation.
+Or without the progress animation.
 
 ```java
 Collection<FitChartValue> values = new ArrayList<>();
