@@ -55,48 +55,54 @@ If you want to customize the view, you can set the next attributes.
 Setting the minimum and maximum values of the scale of the chart.
 
 ```java
-final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
-    fitChart.setMinValue(0f);
-    fitChart.setMaxValue(100f);
+FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
+fitChart.setMinValue(0f);
+fitChart.setMaxValue(100f);
 ```
 
 Setting a single progress value with animation.
 
 ```java
-final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
-    fitChart.setValue(80f);
+FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
+fitChart.setValue(80f);
 ```
 
 Or without the progress animation.
 
 ```java
-final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
-    fitChart.setValue(80f, false);
+FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
+fitChart.setValue(80f, false);
 ```
 
 
 Setting a some progress values with animation.
 
 ```java
-Collection<FitChartValue> values = new ArrayList<>();
-values.add(new FitChartValue(30f, 0x2d4302));
-values.add(new FitChartValue(20f, 0x75a80d));
-values.add(new FitChartValue(15f, 0x8fc026));
-values.add(new FitChartValue(10f, 0xB5CC84));
-final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
-    fitChart.setValues(values);
+// Create a list with the values
+List<FitChartValue> values = new ArrayList<>();
+values.add(new FitChartValue(30f, ContextCompat.getColor(this, R.color.chart_value_1)));
+values.add(new FitChartValue(20f, ContextCompat.getColor(this, R.color.chart_value_2)));
+values.add(new FitChartValue(15f, ContextCompat.getColor(this, R.color.chart_value_3)));
+values.add(new FitChartValue(10f, ContextCompat.getColor(this, R.color.chart_value_4)));
+
+// Add the Collection to the wheel chart
+FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
+fitChart.setValues(values);
 ```
 
 Or without the progress animation.
 
 ```java
-Collection<FitChartValue> values = new ArrayList<>();
-values.add(new FitChartValue(30f, 0x2d4302));
-values.add(new FitChartValue(20f, 0x75a80d));
-values.add(new FitChartValue(15f, 0x8fc026));
-values.add(new FitChartValue(10f, 0xB5CC84));
-final FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
-    fitChart.setValues(values, false);
+// Create a list with the values
+List<FitChartValue> values = new ArrayList<>();
+values.add(new FitChartValue(30f, ContextCompat.getColor(this, R.color.chart_value_1)));
+values.add(new FitChartValue(20f, ContextCompat.getColor(this, R.color.chart_value_2)));
+values.add(new FitChartValue(15f, ContextCompat.getColor(this, R.color.chart_value_3)));
+values.add(new FitChartValue(10f, ContextCompat.getColor(this, R.color.chart_value_4)));
+
+// Add the list to the wheel chart
+FitChart fitChart = (FitChart)findViewById(R.id.fitChart);
+fitChart.setValues(values, false);
 ```
 
 ## License
