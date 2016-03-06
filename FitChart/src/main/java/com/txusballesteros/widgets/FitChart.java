@@ -89,7 +89,18 @@ public class FitChart extends View {
         chartValue.setSweepAngle(calculateSweepAngle(value));
         chartValues.add(chartValue);
         maxSweepAngle = chartValue.getSweepAngle();
-        playAnimation();
+        playAnimation(true);
+    }
+
+    public void setValue(float value, boolean withAnimation) {
+        chartValues.clear();
+        FitChartValue chartValue = new FitChartValue(value, valueStrokeColor);
+        chartValue.setPaint(buildPaintForValue());
+        chartValue.setStartAngle(START_ANGLE);
+        chartValue.setSweepAngle(calculateSweepAngle(value));
+        chartValues.add(chartValue);
+        maxSweepAngle = chartValue.getSweepAngle();
+        playAnimation(withAnimation);
     }
 
     public void setValues(Collection<FitChartValue> values) {
@@ -105,7 +116,23 @@ public class FitChart extends View {
             offsetSweepAngle += sweepAngle;
             maxSweepAngle += sweepAngle;
         }
-        playAnimation();
+        playAnimation(true);
+    }
+
+    public void setValues(Collection<FitChartValue> values, boolean withAnimation) {
+        chartValues.clear();
+        maxSweepAngle = 0;
+        float offsetSweepAngle = START_ANGLE;
+        for (FitChartValue chartValue : values) {
+            float sweepAngle = calculateSweepAngle(chartValue.getValue());
+            chartValue.setPaint(buildPaintForValue());
+            chartValue.setStartAngle(offsetSweepAngle);
+            chartValue.setSweepAngle(sweepAngle);
+            chartValues.add(chartValue);
+            offsetSweepAngle += sweepAngle;
+            maxSweepAngle += sweepAngle;
+        }
+        playAnimation(withAnimation);
     }
 
     public void setAnimationMode(AnimationMode mode) {
@@ -283,10 +310,12 @@ public class FitChart extends View {
         return (value * chartValuesScale);
     }
 
-    private void playAnimation() {
+    private void playAnimation(boolean withAnimation) {
+        int duration = withAnimation ? ANIMATION_DURATION : 0;
+
         ObjectAnimator animator = ObjectAnimator.ofFloat(this, "animationSeek", 0.0f, 1.0f);
         AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.setDuration(ANIMATION_DURATION);
+        animatorSet.setDuration(duration);
         animatorSet.setInterpolator(new DecelerateInterpolator());
         animatorSet.setTarget(this);
         animatorSet.play(animator);
