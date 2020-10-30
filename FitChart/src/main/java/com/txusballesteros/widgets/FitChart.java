@@ -207,7 +207,7 @@ public class FitChart extends View {
                     .getColor(R.styleable.FitChart_valueStrokeColor, valueStrokeColor);
             backStrokeColor = attributes
                     .getColor(R.styleable.FitChart_backStrokeColor, backStrokeColor);
-            int attrAnimationMode = attributes.getInteger(R.styleable.FitChart_animationMode, ANIMATION_MODE_LINEAR);
+            int attrAnimationMode = attributes.getInteger(R.styleable.FitChart_animationMethod, ANIMATION_MODE_LINEAR);
             if (attrAnimationMode == ANIMATION_MODE_LINEAR) {
                 animationMode = AnimationMode.LINEAR;
             } else {
