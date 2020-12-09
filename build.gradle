@@ -24,10 +24,9 @@
  */
 buildscript {
     repositories {
-        maven {
-            url "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
+        google()
         jcenter()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.4'
@@ -44,6 +43,7 @@ allprojects {
         gitUrl = 'https://github.com/txusballesteros/fit-chart.git'
     }
     repositories {
+        google()
         jcenter()
     }
 }
