@@ -24,7 +24,7 @@ repositories {
 And add the library to your module **build.gradle**:
 ```Javascript
 dependencies {
-    compile 'com.github.javiersantos:FitChart:1.1.1'
+    compile 'com.github.javiersantos:FitChart:1.1.2'
 }
 ```
 
